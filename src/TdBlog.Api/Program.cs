@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using TdBlog.Api;
 using TdBlog.Core.Domain.Identity;
 using TdBlog.Data;
 
@@ -57,5 +58,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+//seeding data 
+app.MigrateDatabase();
 
 app.Run();
