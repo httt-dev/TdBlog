@@ -10,4 +10,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TdBlog.Core\TdBlog.Core.csproj" />
+    <ProjectReference Include="..\TdBlog.Data\TdBlog.Data.csproj" />
+  </ItemGroup>
+
 </Project>
