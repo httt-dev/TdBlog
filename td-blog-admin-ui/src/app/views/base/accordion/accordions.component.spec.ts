@@ -5,6 +5,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AccordionModule, CardModule, GridModule } from '@coreui/angular';
 import { IconSetService } from '@coreui/icons-angular';
 import { iconSubset } from '../../../icons/icon-subset';
+import { DocsComponentsModule } from '../../../../components';
 import { AccordionsComponent } from './accordions.component';
 
 describe('AccordionsComponent', () => {
@@ -14,9 +15,10 @@ describe('AccordionsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [AccordionModule, NoopAnimationsModule, CardModule, GridModule, RouterTestingModule, AccordionsComponent],
-    providers: [IconSetService]
-})
+      declarations: [AccordionsComponent],
+      imports: [AccordionModule, NoopAnimationsModule, CardModule, GridModule, DocsComponentsModule, RouterTestingModule],
+      providers: [IconSetService]
+    })
       .compileComponents();
   });
 

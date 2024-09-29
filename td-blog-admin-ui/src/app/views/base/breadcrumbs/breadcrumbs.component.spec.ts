@@ -4,6 +4,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { BreadcrumbModule, CardModule, GridModule } from '@coreui/angular';
 import { IconSetService } from '@coreui/icons-angular';
 import { iconSubset } from '../../../icons/icon-subset';
+import { DocsComponentsModule } from '../../../../components';
 import { BreadcrumbsComponent } from './breadcrumbs.component';
 
 describe('BreadcrumbsComponent', () => {
@@ -13,9 +14,10 @@ describe('BreadcrumbsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [CardModule, GridModule, BreadcrumbModule, RouterTestingModule, BreadcrumbsComponent],
-    providers: [IconSetService]
-}).compileComponents();
+      declarations: [BreadcrumbsComponent],
+      imports: [CardModule, GridModule, BreadcrumbModule, RouterTestingModule, DocsComponentsModule],
+      providers: [IconSetService]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

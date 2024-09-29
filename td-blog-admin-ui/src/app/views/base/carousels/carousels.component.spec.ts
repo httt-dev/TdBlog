@@ -6,6 +6,7 @@ import { CardModule, CarouselModule, GridModule } from '@coreui/angular';
 import { IconModule } from '@coreui/icons-angular';
 import { IconSetService } from '@coreui/icons-angular';
 import { iconSubset } from '../../../icons/icon-subset';
+import { DocsComponentsModule } from '../../../../components';
 import { CarouselsComponent } from './carousels.component';
 
 describe('CarouselsComponent', () => {
@@ -15,9 +16,10 @@ describe('CarouselsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [CarouselModule, NoopAnimationsModule, CardModule, GridModule, IconModule, RouterTestingModule, CarouselsComponent],
-    providers: [IconSetService]
-})
+      declarations: [ CarouselsComponent ],
+      imports: [CarouselModule, NoopAnimationsModule, CardModule, GridModule, IconModule, DocsComponentsModule, RouterTestingModule],
+      providers: [IconSetService]
+    })
     .compileComponents();
   }));
 

@@ -1,25 +1,15 @@
 import { Component } from '@angular/core';
-import { ChartData } from 'chart.js';
-import { ChartjsComponent } from '@coreui/angular-chartjs';
-import { RowComponent, ColComponent, TextColorDirective, CardComponent, CardHeaderComponent, CardBodyComponent } from '@coreui/angular';
-import { DocsCalloutComponent } from '@docs-components/public-api';
 
 @Component({
-    selector: 'app-charts',
-    templateUrl: './charts.component.html',
-    styleUrls: ['./charts.component.scss'],
-    standalone: true,
-    imports: [RowComponent, ColComponent, DocsCalloutComponent, TextColorDirective, CardComponent, CardHeaderComponent, CardBodyComponent, ChartjsComponent]
+  selector: 'app-charts',
+  templateUrl: './charts.component.html',
+  styleUrls: ['./charts.component.scss']
 })
 export class ChartsComponent {
 
-  options = {
-    maintainAspectRatio: false
-  };
-
   months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-  chartBarData: ChartData = {
+  chartBarData = {
     labels: [...this.months].slice(0, 7),
     datasets: [
       {
@@ -34,7 +24,7 @@ export class ChartsComponent {
   //   maintainAspectRatio: false,
   // };
 
-  chartLineData: ChartData = {
+  chartLineData = {
     labels: [...this.months].slice(0, 7),
     datasets: [
       {
@@ -57,10 +47,10 @@ export class ChartsComponent {
   };
 
   chartLineOptions = {
-    maintainAspectRatio: false
+    maintainAspectRatio: false,
   };
 
-  chartDoughnutData: ChartData = {
+  chartDoughnutData = {
     labels: ['VueJs', 'EmberJs', 'ReactJs', 'Angular'],
     datasets: [
       {
@@ -77,7 +67,7 @@ export class ChartsComponent {
   //   radius: '100%'
   // };
 
-  chartPieData: ChartData = {
+  chartPieData = {
     labels: ['Red', 'Green', 'Yellow'],
     datasets: [
       {
@@ -95,7 +85,7 @@ export class ChartsComponent {
   //   radius: '100%'
   // };
 
-  chartPolarAreaData: ChartData = {
+  chartPolarAreaData = {
     labels: ['Red', 'Green', 'Yellow', 'Grey', 'Blue'],
     datasets: [
       {
@@ -105,7 +95,7 @@ export class ChartsComponent {
     ]
   };
 
-  chartRadarData: ChartData = {
+  chartRadarData = {
     labels: ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'],
     datasets: [
       {
@@ -116,6 +106,7 @@ export class ChartsComponent {
         pointBorderColor: '#fff',
         pointHoverBackgroundColor: '#fff',
         pointHoverBorderColor: 'rgba(179,181,198,1)',
+        tooltipLabelColor: 'rgba(179,181,198,1)',
         data: [65, 59, 90, 81, 56, 55, 40]
       },
       {
@@ -126,6 +117,7 @@ export class ChartsComponent {
         pointBorderColor: '#fff',
         pointHoverBackgroundColor: '#fff',
         pointHoverBorderColor: 'rgba(255,99,132,1)',
+        tooltipLabelColor: 'rgba(255,99,132,1)',
         data: [this.randomData, this.randomData, this.randomData, this.randomData, this.randomData, this.randomData, this.randomData]
       }
     ]

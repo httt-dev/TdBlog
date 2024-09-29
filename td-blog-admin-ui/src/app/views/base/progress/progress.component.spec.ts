@@ -4,6 +4,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { CardModule, GridModule, ProgressModule } from '@coreui/angular';
 import { IconSetService } from '@coreui/icons-angular';
 import { iconSubset } from '../../../icons/icon-subset';
+import { DocsComponentsModule } from '../../../../components';
 import { ProgressComponent } from './progress.component';
 
 describe('ProgressComponent', () => {
@@ -13,9 +14,10 @@ describe('ProgressComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [ProgressModule, CardModule, GridModule, RouterTestingModule, ProgressComponent],
-    providers: [IconSetService]
-})
+      declarations: [ProgressComponent],
+      imports: [ProgressModule, CardModule, GridModule, DocsComponentsModule, RouterTestingModule],
+      providers: [IconSetService]
+    })
       .compileComponents();
   });
 

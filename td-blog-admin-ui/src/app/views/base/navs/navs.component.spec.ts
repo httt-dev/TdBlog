@@ -5,6 +5,7 @@ import { CardModule, DropdownModule, GridModule, NavModule } from '@coreui/angul
 import { IconSetService } from '@coreui/icons-angular';
 import { iconSubset } from '../../../icons/icon-subset';
 import { NavsComponent } from './navs.component';
+import { DocsComponentsModule } from '../../../../components';
 
 describe('NavsComponent', () => {
   let component: NavsComponent;
@@ -13,9 +14,10 @@ describe('NavsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [GridModule, CardModule, RouterTestingModule, NavModule, DropdownModule, NavsComponent],
-    providers: [IconSetService]
-})
+      declarations: [NavsComponent],
+      imports: [GridModule, CardModule, RouterTestingModule, NavModule, DropdownModule, DocsComponentsModule],
+      providers: [IconSetService]
+    })
       .compileComponents();
   });
 

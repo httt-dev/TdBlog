@@ -14,6 +14,7 @@ import {
 } from '@coreui/angular';
 import { IconSetService } from '@coreui/icons-angular';
 import { iconSubset } from '../../../icons/icon-subset';
+import { DocsComponentsModule } from '../../../../components';
 import { DropdownsComponent } from './dropdowns.component';
 
 describe('DropdownsComponent', () => {
@@ -23,9 +24,10 @@ describe('DropdownsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [ButtonModule, DropdownModule, CollapseModule, NoopAnimationsModule, GridModule, CardModule, RouterTestingModule, NavModule, NavbarModule, ButtonGroupModule, DropdownsComponent],
-    providers: [IconSetService]
-})
+      declarations: [DropdownsComponent],
+      imports: [ButtonModule, DropdownModule, CollapseModule, NoopAnimationsModule, GridModule, CardModule, DocsComponentsModule, RouterTestingModule, NavModule, NavbarModule, ButtonGroupModule],
+      providers: [IconSetService]
+    })
       .compileComponents();
   });
 

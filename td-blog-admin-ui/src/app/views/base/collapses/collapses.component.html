@@ -1,11 +1,14 @@
 <c-row ngPreserveWhitespaces>
   <c-col xs="12">
+    <app-docs-callout href="components/collapse" name="Collapse"></app-docs-callout>
+  </c-col>
+  <c-col xs="12">
     <c-card class="mb-4">
       <c-card-header>
         <strong>Angular Collapse</strong>
       </c-card-header>
       <c-card-body>
-        <p class="text-body-secondary small">You can use a link or a button component.</p>
+        <p class="text-medium-emphasis small">You can use a link or a button component.</p>
         <app-docs-example href="components/collapse">
           <a (click)="toggleCollapse(0)" cButton class="me-1" color="primary">Link</a>
           <button (click)="toggleCollapse(0)" cButton class="me-1" color="primary">
@@ -31,7 +34,7 @@
         <strong>Angular Collapse</strong> <small>horizontal</small>
       </c-card-header>
       <c-card-body>
-        <p class="text-body-secondary small">
+        <p class="text-medium-emphasis small">
           Add the <code>horizontal</code> property to transition the width
           instead of height and set a width on the immediate child element.
         </p>
@@ -70,7 +73,7 @@
         <strong>Angular Collapse</strong> <small> multi target</small>
       </c-card-header>
       <c-card-body>
-        <p class="text-body-secondary small">
+        <p class="text-medium-emphasis small">
           A <code>&lt;c-button&gt;</code> can show and hide multiple elements.
         </p>
         <app-docs-example href="components/collapse#multiple-targets">

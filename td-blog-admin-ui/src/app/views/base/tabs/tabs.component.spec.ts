@@ -1,28 +1,31 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
 
-import { IconSetService } from '@coreui/icons-angular';
+import { CardModule, GridModule, NavModule, TabsModule } from '@coreui/angular';
+import { IconModule, IconSetService } from '@coreui/icons-angular';
 import { iconSubset } from '../../../icons/icon-subset';
-import { AppTabsComponent } from './tabs.component';
+import { DocsComponentsModule } from '../../../../components';
+import { TabsComponent } from './tabs.component';
 
 describe('TabsComponent', () => {
-  let component: AppTabsComponent;
-  let fixture: ComponentFixture<AppTabsComponent>;
+  let component: TabsComponent;
+  let fixture: ComponentFixture<TabsComponent>;
   let iconSetService: IconSetService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppTabsComponent, NoopAnimationsModule],
-      providers: [IconSetService],
-      teardown: { destroyAfterEach: false }   // <- add this line for Error: NG0205: Injector has already been destroyed.
-    }).compileComponents();
+      declarations: [TabsComponent],
+      imports: [TabsModule, GridModule, CardModule, IconModule, RouterTestingModule, NavModule, DocsComponentsModule],
+      providers: [IconSetService]
+    })
+      .compileComponents();
   });
 
   beforeEach(() => {
     iconSetService = TestBed.inject(IconSetService);
     iconSetService.icons = { ...iconSubset };
 
-    fixture = TestBed.createComponent(AppTabsComponent);
+    fixture = TestBed.createComponent(TabsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

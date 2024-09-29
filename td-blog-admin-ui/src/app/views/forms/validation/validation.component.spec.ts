@@ -5,6 +5,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ButtonModule, CardModule, FormModule, GridModule, ListGroupModule } from '@coreui/angular';
 import { IconSetService } from '@coreui/icons-angular';
 import { iconSubset } from '../../../icons/icon-subset';
+import { DocsComponentsModule } from '../../../../components';
 import { ValidationComponent } from './validation.component';
 
 describe('ValidationComponent', () => {
@@ -14,9 +15,10 @@ describe('ValidationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [FormModule, ButtonModule, ListGroupModule, FormsModule, GridModule, CardModule, RouterTestingModule, ValidationComponent],
-    providers: [IconSetService]
-})
+      declarations: [ValidationComponent],
+      imports: [FormModule, ButtonModule, ListGroupModule, FormsModule, GridModule, CardModule, DocsComponentsModule, RouterTestingModule],
+      providers: [IconSetService]
+    })
       .compileComponents();
   });
 
