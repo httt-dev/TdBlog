@@ -1,7 +1,10 @@
-﻿namespace TdBlog.Core.SeedWorks
+﻿using TdBlog.Core.Repositories;
+
+namespace TdBlog.Core.SeedWorks
 {
     public interface IUnitOfWork
     {
+        IPostRepository Posts { get; }
         Task<int> CompleteAsync();
     }
 }
